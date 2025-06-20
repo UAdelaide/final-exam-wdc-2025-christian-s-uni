@@ -109,7 +109,10 @@
 
             dogs = await res.json();
             console.log(dogs);
-          } catch
+          } catch (err) {
+            error.value = err.message;
+            message.value = '';
+          }
         }
 
         async function submitWalkRequest() {
