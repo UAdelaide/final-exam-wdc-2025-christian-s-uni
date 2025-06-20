@@ -97,6 +97,7 @@
           } catch (err) {
             error.value = 'Failed to load walk requests';
           }
+          console.log()
         }
 
         async function getUserDogs() {
@@ -108,7 +109,7 @@
             if (!res.ok) throw new Error(result.error || 'Failed to get dogs');
 
             dogs.value = await res.json();
-            console.log(dogs);
+            console.log(dogs.value);
           } catch (err) {
             error.value = err.message;
             message.value = '';
