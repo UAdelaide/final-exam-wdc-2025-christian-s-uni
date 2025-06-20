@@ -9,6 +9,7 @@ createApp({
         };
     },
     async mounted() {
-        var dogImg = await fetch("")
+        this. = await fetch("https://dog.ceo/api/breeds/image/random");
+
     }
 })
