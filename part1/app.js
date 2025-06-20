@@ -51,7 +51,9 @@ app.use(cookieParser());
             ((SELECT dog_id FROM Dogs WHERE name = "Lucy"), '2025-06-13 9:30:00', 30, "Semaphore", 'completed');`);
             console.log('Successfully added walk requests');
 
-            await db.execute(``)
+            await db.execute(`INSERT INTO WalkRatings(request_id, walker_id, owner_id, rating, rated_at) VALUES
+            (3, 2, 4, 5, '2025-06-13 12:00:00'),
+            (5, 2, 3, 3, '2025-06-13 11:00:00');`)
         } else {
             console.log("Not adding data as there is already at least one user or dog");
         }
