@@ -22,8 +22,10 @@ let db;
     try {
     // Connect to the dogwalks database
     const connection = await mysql.createConnection({
-        
-    })
+        host: 'localhost',
+        user: 'root',
+        password: ''
+    });
     } catch (err) {
 
     }
