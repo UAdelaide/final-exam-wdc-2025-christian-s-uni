@@ -101,7 +101,7 @@
           console.log(walks.value);
         }
 
-        async function getUserDogs() {
+        async function loadUserDogs() {
           try {
             const res = await fetch('/api/walks/userDogs', {
               method: 'GET',
