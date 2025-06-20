@@ -21,12 +21,7 @@ let db;
 (async () => {
     try {
     // Connect to the dogwalks database
-    db = await mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: '',
-        database: 'DogWalkService'
-    });
+    
     // add some test data
     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM books');
     if (rows[0].count < 1) {
