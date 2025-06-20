@@ -24,6 +24,7 @@ app.use(cookieParser());
         var [rows] = await db.query(`SELECT COUNT(*) as count FROM Users u
             INNER JOIN Dogs d on d.owner_id = u.user_id`);
         if (rows[0].count === 0) {
+            // Add all the test data
             await db.execute(`
             INSERT INTO Users(username, email, password_hash, role) VALUES
             ("alice123", "alice@example.com", "hashed123", 'owner'),
