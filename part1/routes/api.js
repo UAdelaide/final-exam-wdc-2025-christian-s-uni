@@ -3,7 +3,7 @@ const db = require('../db.js');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/dogs', function(req, res, next) {
+router.get('/dogs', async function(req, res, next) {
   try {
     var query = `SELECT name as dog_name, size, username as owner_username FROM Dogs
     INNER JOIN Users
