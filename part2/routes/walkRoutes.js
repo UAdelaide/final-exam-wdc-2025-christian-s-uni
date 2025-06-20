@@ -59,8 +59,8 @@ router.post('/:id/apply', async (req, res) => {
   }
 });
 
-router.get('/getDogs', async (req,res) => {
-  // db.q
-})
+router.get('/getUserDogs', async (req,res) => {
+  // db.query to SELECT * FROM Dogs WHERE owner_id = ...
+});
 
 module.exports = router;
