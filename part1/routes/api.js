@@ -34,8 +34,8 @@ router.get('/walkers/summary', async function (req,res,next) {
     // Get all the walkers
     var query = "SELECT user_id, username, email FROM Users WHERE Role = 'walker'";
     var [walkers] = db.query(query);
-    // Get all 
-    const
+    // Get all reviews associated with each walker
+    var walkerReviews = p[;]
     for (const walker of walkers) {
 
     }
