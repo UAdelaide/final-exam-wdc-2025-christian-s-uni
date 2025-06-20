@@ -48,6 +48,7 @@ app.use(cookieParser());
             ((SELECT dog_id FROM Dogs WHERE name = "Lucy"), '2025-06-13 10:30:00', 30, "Semaphore", 'open');
             `);
     }
+    
     } catch (err) {
 
     }
