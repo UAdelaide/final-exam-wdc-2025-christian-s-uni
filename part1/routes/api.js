@@ -37,9 +37,9 @@ router.get('/walkers/summary', async function (req,res,next) {
     // Get all reviews associated with each walker
     var fetchReviews = [];
     for (const walker of walkers) {
-      walkers.push(walker);
+      fetchReviews.push(walker);
     }
-
+    const w
 
 
   } catch (err) {
