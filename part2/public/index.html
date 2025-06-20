@@ -43,7 +43,7 @@
               credentials: "same-origin",
               body: JSON.stringify(
                 {
-                  email: this.enteredUsername, pass: this.enteredPassword
+                  email: this.enteredUsername, password: this.enteredPassword
                 }
               )
             }).then((r)=>(r.json().then((loggedIn) => {
