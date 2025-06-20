@@ -33,26 +33,8 @@ router.get('/walkrequests/open', async function(req,res,next) {
 router.get('/walkers/summary', async function (req,res,next) {
   try {
     // Get all the walkers
-    var query = "SELECT user_id, username, email FROM Users WHERE Role = 'walker'";
-    var [walkers] = await db.query(query);
-    // Get all reviews associated with each walker
-    query = "SELECT ";
-    var fetchReviews = [];
-    for (const walker of walkers) {
-      fetchReviews.push(walker);
-    }
-    const walkerReviews = await Promise.all(fetchReviews);
-    let someJSON = [];
-    console.log(walkerReviews);
-    for (let w = 0; w < walkerReviews.length; w++) {
-      for (let r = 0; r < walkerReviews[w].length; r++) {
-        someJSON.push(walkerReviews[w][r]); // add all the reviews to a json for now
-        console.log(walkerReviews[w][r]);
-      }
-    }
-    return res.send(someJSON);
-
-
+    var query = ` SELECT username, COUNT(rating_id), AVG(rating) FROM Users u
+    LEFT JOIN WalkRatings wra ON u.user_id = wra.walker_id GROUP BY username;`
   } catch (err) {
     console.log(err);
     return res.status(500).send;
