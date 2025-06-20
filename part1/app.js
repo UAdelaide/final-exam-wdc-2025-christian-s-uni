@@ -59,7 +59,7 @@ app.use(cookieParser());
             console.log("Not adding data as there is already at least one user or dog");
         }
     } catch (err) {
-    console.log('Error occurred while adding data.\n' + addWalksErr);
+    console.log('Error occurred while adding data.\n' + err);
     }
 })();
 
