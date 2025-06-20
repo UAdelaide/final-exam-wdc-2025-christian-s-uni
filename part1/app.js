@@ -56,8 +56,8 @@ app.use(cookieParser());
             (5, 2, 3, 3, '2025-06-13 11:00:00');`);
             console.log('Successfully added walk ratings');
 
-            await db.execute(`INSERT INTO WalkApplications(request_id, walker_id, status)
-                (1, 2, '2025-06-09  )
+            await db.execute(`INSERT INTO WalkApplications(request_id, walker_id, applied_at, status)
+                (1, 2, '2025-06-09 12:00:00', 'rejected' )
                 `)
         } else {
             console.log("Not adding data as there is already at least one user or dog");
