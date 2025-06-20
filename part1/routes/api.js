@@ -10,7 +10,9 @@ router.get('/dogs', function(req, res, next) {
     INNER JOIN Users
     ON Dogs.owner_id = Users.user_id`;
     const [rows] = db.query(query);
-    res.send(rows);
+    return res.send(rows);
+  } catch (err) {
+    return res.status(500).send();
   }
 });
 
