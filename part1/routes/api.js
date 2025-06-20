@@ -35,7 +35,7 @@ router.get('/walkers/summary', async function (req,res,next) {
     COUNT(*) AS total_ratings
     FROM WalkRatings wr
     INNER JOIN Users u ON wr.walker_id = u.user_id
-    GROUP BY `;
+    GROUP BY u.username`;
   } catch (err) {
     console.log(err);
     return res.status(500).send;
