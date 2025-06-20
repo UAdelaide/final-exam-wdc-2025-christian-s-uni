@@ -31,7 +31,10 @@ router.get('/walkrequests/open', async function(req,res,next) {
 
 router.get('/walkers/summary', async function (req,res,next) {
   try {
-    // 
+    // stuff
+  } catch (err) {
+    console.log(err);
+    return res.status(500).send;
   }
 })
 module.exports = router;
