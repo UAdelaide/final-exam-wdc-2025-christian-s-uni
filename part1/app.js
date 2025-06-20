@@ -25,7 +25,7 @@ let db;
         host: 'localhost',
         user: 'root',
         password: '',
-        database: ''
+        database: 'DogWalkService'
     });
     } catch (err) {
 
