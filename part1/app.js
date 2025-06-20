@@ -21,10 +21,7 @@ app.use(cookieParser());
 (async () => {
     try {
         var [rows] = await db.query(`SELECT COUNT(*) FROM Users u
-            INNER JOIN Dogs d on d.owner_id = u.user_id
-            INNER JOIN WalkRequests wre ON wre.dog_id = d.dog_id
-            INNER JOIN WalkApplications wa ON wa.request_id = wre.request_id
-            INNER JOIN WalkRatings wra.request_id = wre.request_id`);
+            INNER JOIN Dogs d on d.owner_id = u.user_id`);
         await db.execute(`
             INSERT INTO Users(username, email, password_hash, role) VALUES
             ("alice123", "alice@example.com", "hashed123", 'owner'),
