@@ -45,9 +45,9 @@ app.use(cookieParser());
     }
     console.log('Successfully added test data.');
     } catch (err) {
-
+    console.log('Error occurres, perhaps the data already exists?' + err);
     }
-})();
+)();
 
 app.use(express.static(path.join(__dirname, 'public')));
 
