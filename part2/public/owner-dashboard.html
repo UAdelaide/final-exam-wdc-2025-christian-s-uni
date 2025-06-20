@@ -104,9 +104,9 @@
         async function loadUserDogs() {
           try {
             const res = await fetch('/api/walks/userDogs')
-            inbetweenvalue = await res.json();
-            dogs.value = await inbetweenvalue;
-            console.log(inbetweenvalue);
+
+            dogs.value = await res.json();
+            console.log(dogs.value);
 
             if (!res.ok) throw new Error(result.error || 'Failed to get dogs');
           } catch (err) {
@@ -152,8 +152,8 @@
           walks,
           message,
           error,
+          dogs,
           submitWalkRequest
-          dogs
         };
       },
       methods: {
