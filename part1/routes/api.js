@@ -40,6 +40,7 @@ router.get('/walkers/summary', async function (req,res,next) {
       fetchReviews.push(walker);
     }
     const walkerReviews = await Promise.all(fetchReviews);
+    let someJSON = {};
     for (let w = 0; w < walkerReviews.length; w++) {
       for (let r = 0; r < walkerReviews[w].length; r++) {
         
