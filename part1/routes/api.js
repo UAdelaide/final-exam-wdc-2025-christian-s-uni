@@ -1,7 +1,6 @@
 var express = require('express');
-const db = require('../db');
+const db = require('../db.js');
 var router = express.Router();
-db = require('../db.js');
 
 /* GET home page. */
 router.get('/dogs', function(req, res, next) {
