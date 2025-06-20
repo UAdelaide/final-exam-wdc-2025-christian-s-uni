@@ -8,5 +8,7 @@ createApp({
             dogImage: ""
         };
     },
-    
+    async mounted() {
+        var dogImg = await fetch("")
+    }
 })
