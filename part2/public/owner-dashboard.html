@@ -99,7 +99,9 @@
         }
 
         async function getUserDogs() {
-          try 
+          try {
+            const res = await fetch('/api/walks/userDogs');
+          }
         }
 
         async function submitWalkRequest() {
