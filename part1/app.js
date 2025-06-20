@@ -3,6 +3,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mysql = require('mysql2/promise');
+var 
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -21,7 +22,7 @@ let db;
 (async () => {
     try {
     // Connect to the dogwalks database
-    
+
     // add some test data
     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM books');
     if (rows[0].count < 1) {
