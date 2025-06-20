@@ -12,10 +12,10 @@
   <div id="app" class="container py-5">
     <h1 class="mb-4 text-primary">{{ message }}</h1>
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
-    <form action=""></form>
+    <form @submit="login">
     <div>
-    <label for="username">Username</label>
-    <input id="username" type="text" v-model="enteredUsername">
+      <label for="username">Username</label>
+      <input id="username" type="text" v-model="enteredUsername">
     </div>
     <div>
     <label for="password">Password</label>
@@ -24,6 +24,7 @@
     <div>
       <button type="button" @click="login">Login</button>
     </div>
+  </form>
   </div>
 
   <script>
