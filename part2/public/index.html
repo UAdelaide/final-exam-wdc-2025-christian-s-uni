@@ -37,8 +37,10 @@
       },
       methods: {
         async login() {
+          // F
             fetch("/api/users/login", {
               method: "POST",
+              // Set headers and credentials accordingly
               headers: { 'Content-Type': 'application/json'},
               credentials: "same-origin",
               body: JSON.stringify(
