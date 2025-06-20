@@ -9,7 +9,7 @@ createApp({
         };
     },
     async mounted() {
-        this. = await fetch("https://dog.ceo/api/breeds/image/random");
-
+        var fetchedDogImg = await fetch("https://dog.ceo/api/breeds/image/random");
+        this.dogImage = await
     }
 })
