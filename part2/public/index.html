@@ -46,7 +46,9 @@
                   user: this.enteredUsername, pass: this.enteredPassword
                 }
               )
-            }).then((r)=>(r.json().then()))
+            }).then((r)=>(r.json().then(loggedIn) => {
+
+            }));
         }
       }
     }).mount('#app');
