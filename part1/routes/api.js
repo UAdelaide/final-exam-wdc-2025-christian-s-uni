@@ -51,5 +51,6 @@ router.get('/walkers/summary', async function (req,res,next) {
     console.log(err);
     return res.status(500).send;
   }
-})
+});
+
 module.exports = router;
