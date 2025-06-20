@@ -63,6 +63,8 @@ router.get('/logout', (req,res) => {
     if (err) {
       return res.status(500).send();
     }
+    // clear the cookie
+    res.clearCookie("connect.sid");
     res.send({ message: "Logout success" });
   });
 });
