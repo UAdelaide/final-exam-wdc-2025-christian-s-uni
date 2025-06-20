@@ -61,6 +61,7 @@ router.post('/:id/apply', async (req, res) => {
 
 // get all dogs from signed in user
 router.get('/getUserDogs', async (req,res) => {
+  try {
   // db.query to SELECT * FROM Dogs WHERE owner_id = ...
   var query = "SELECT * FROM Dogs WHERE owner_id = ?";
   var [dogs] = await db.query(query, [req.session.user.userid]);
