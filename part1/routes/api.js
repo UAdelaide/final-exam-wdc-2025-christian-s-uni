@@ -32,7 +32,7 @@ router.get('/walkrequests/open', async function(req,res,next) {
 
 router.get('/walkers/summary', async function (req,res,next) {
   try {
-    // Get all users wi
+    // This query gets all users with role "walker", list of ratings wit
     var query = ` SELECT ratinginfo.username, total_ratings, average_rating, completed_walks FROM
     (SELECT username, COUNT(rating_id) AS total_ratings, AVG(rating) AS average_rating FROM Users u
     LEFT JOIN WalkRatings wra ON u.user_id = wra.walker_id
