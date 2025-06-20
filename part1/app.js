@@ -22,7 +22,7 @@ app.use(cookieParser());
     // Connect to the dogwalks database
 
     // add some test data
-    const [rows] = await db.execute('SELECT COUNT(*) AS count FROM books');
+    const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
     if (rows[0].count < 1) {
         await db.execute(`
             INSERT INTO Users(username, email, password_hash, role) VALUES
