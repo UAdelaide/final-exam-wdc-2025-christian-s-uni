@@ -23,8 +23,8 @@ app.use(cookieParser());
         // Check there are no users and dogs in the database
         var [rows] = await db.query(`SELECT COUNT(*) as count FROM Users u
             INNER JOIN Dogs d on d.owner_id = u.user_id`);
-        if (rows[0].count === 0) {}
-        await db.execute(`
+        if (rows[0].count === 0) {
+            await db.execute(`
             INSERT INTO Users(username, email, password_hash, role) VALUES
             ("alice123", "alice@example.com", "hashed123", 'owner'),
             ("bobwalker", "bob@example.com", "hashed456", 'walker'),
@@ -49,6 +49,7 @@ app.use(cookieParser());
             ((SELECT dog_id FROM Dogs WHERE name = "Sam"), '2025-06-13 11:30:00', 15, "Rundle Mall", 'accepted'),
             ((SELECT dog_id FROM Dogs WHERE name = "Lucy"), '2025-06-13 10:30:00', 30, "Semaphore", 'open');`);
             console.log('Successfully added walk requests');
+        }
     } catch (err) {
     console.log('Error occurred while adding data.\n' + addWalksErr);
     }
