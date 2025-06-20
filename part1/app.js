@@ -29,6 +29,7 @@ app.use(cookieParser());
             ("ben", "ben@example.com", "verysecure", 'owner'),
             ("kenny06", "kenny@kennison.com", "evenmoresecure151", 'walker');
             `);
+            console.log("Successfully added users");
     } catch (AddUsrErr) {
         console.log("Failed to add users, they probably already exist\n" + AddUsrErr);
     }
@@ -50,7 +51,7 @@ app.use(cookieParser());
             ((SELECT dog_id FROM Dogs WHERE name = "Clifford"), '2025-06-13 10:30:00', 60, "Croydon", 'completed'),
             ((SELECT dog_id FROM Dogs WHERE name = "Sam"), '2025-06-13 11:30:00', 15, "Rundle Mall", 'accepted'),
             ((SELECT dog_id FROM Dogs WHERE name = "Lucy"), '2025-06-13 10:30:00', 30, "Semaphore", 'open');`);
-            console.log('Successfully added test data.');
+            console.log('Successfully added walk requests');
     } catch (addWalksErr) {
     console.log('Error occurred, the walk requests probably already exist\n' + addWalksErr);
     }
