@@ -127,11 +127,8 @@
             }).then((r)=>(r.json().then((loggedOut) => {
               // If logout succeeds, redirect to the login page
               if (r.status === 200) {
-                if (loggedIn.user.role === "owner") {
-                  window.location = "/owner-dashboard.html";
-                } else if (loggedIn.user.role === "walker") {
-                  window.location = "/walker-dashboard.html";
-                }}})));
+              window.location=""
+              }})));
         }
       }
         }
