@@ -63,7 +63,7 @@ app.use(cookieParser());
                 (4, 5, '2025-06-12 10:00:00', 'accepted'),
                 (5, 2, '2025-06-12 23:45:55', 'accepted')
                 `);
-                console.log('Successfully added walk ratings');
+                console.log('Successfully added walk applications');
         } else {
             console.log("Not adding data as there is already at least one user or dog");
         }
