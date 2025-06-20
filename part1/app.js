@@ -20,7 +20,8 @@ app.use(cookieParser());
 
 (async () => {
     try {
-        var [rows] = 
+        var [rows] = await db.query(`SELECT COUNT(*) FROM Users
+            INNER JOIN Dogs d on d.`)
         await db.execute(`
             INSERT INTO Users(username, email, password_hash, role) VALUES
             ("alice123", "alice@example.com", "hashed123", 'owner'),
