@@ -51,7 +51,9 @@
               )
             }).then((r)=>(r.json().then((loggedIn) => {
               if (r.status === 200) {
-                
+                if (loggedIn.user.role === owner) {
+                  window.location = "/ow"
+                }
               }
             })));
         }
