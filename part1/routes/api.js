@@ -7,7 +7,8 @@ db = require('../db.js');
 router.get('/dogs', function(req, res, next) {
   try {
     var query = "SELECT name as dog_name, size, username as owner_username FROM Dogs INNER JOIN Users on Dogs.owner_id = Users.user_id"
-    const [rows] = db.query(db.)
+    const [rows] = db.query(query);
+    
   }
 });
 
