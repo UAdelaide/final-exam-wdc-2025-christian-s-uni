@@ -21,8 +21,11 @@ let db;
 (async () => {
     try {
     // Connect to the dogwalks database
-    } catch (err) {
+    const connection = await mysql.createConnection({
         
+    })
+    } catch (err) {
+
     }
 })();
 
