@@ -59,7 +59,7 @@ router.post('/:id/apply', async (req, res) => {
   }
 });
 
-// Get all digs from the signed in user
+// Get all dogs from the signed in user
 router.get('/userdogs', async (req,res) => {
   try {
   // db.query to SELECT * FROM Dogs WHERE owner_id = ...
