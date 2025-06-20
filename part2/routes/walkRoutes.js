@@ -66,6 +66,10 @@ router.get('/getUserDogs', async (req,res) => {
   var query = "SELECT * FROM Dogs WHERE owner_id = ?";
   var [dogs] = await db.query(query, [req.session.user.userid]);
   return dogs;
+  } catch (err) {
+    console.log(err);
+    res.status(400).send()
+  }
 });
 
 module.exports = router;
