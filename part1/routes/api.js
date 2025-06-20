@@ -39,7 +39,8 @@ router.get('/walkers/summary', async function (req,res,next) {
     for (const walker of walkers) {
       fetchReviews.push(walker);
     }
-    const w
+    const walkerReviews = await Promise.all(fetchReviews);
+    res.s
 
 
   } catch (err) {
