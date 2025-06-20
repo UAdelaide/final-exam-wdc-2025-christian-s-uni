@@ -46,7 +46,7 @@
                   user: this.enteredUsername, pass: this.enteredPassword
                 }
               )
-            }).then
+            }).then((r)=>(r.json))
         }
       }
     }).mount('#app');
