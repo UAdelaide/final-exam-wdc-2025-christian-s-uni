@@ -14,11 +14,11 @@
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
     <div>
     <label for="username">Username</label>
-    <input id="username" type="text" v-bind="enteredUsername">
+    <input id="username" type="text" v-model="enteredUsername">
     </div>
     <div>
     <label for="password">Password</label>
-    <input id="password" type="password" v-bind="enteredPassword">
+    <input id="password" type="password" v-model="enteredPassword">
     </div>
     <div>
       <button type="button" @click="login">Login</button>
