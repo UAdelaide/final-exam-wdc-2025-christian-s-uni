@@ -104,6 +104,7 @@
               method: 'GET',
               credentials: "same-origin",
             })
+            if (!res.ok) throw new Error(result.error || 'Error submitting walk request');
           }
         }
 
