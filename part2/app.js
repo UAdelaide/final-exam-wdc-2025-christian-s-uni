@@ -6,8 +6,9 @@ require('dotenv').config();
 
 const app = express();
 
+// Set up express-session
 app.use(session({
-    secret: 'aaaaaaaaaa',
+    secret: 'sessionsecret',
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false }
