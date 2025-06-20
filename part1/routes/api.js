@@ -33,7 +33,9 @@ router.get('/walkers/summary', async function (req,res,next) {
   try {
     // Get all the walkers
     var query = "SELECT * FROM Users WHERE Role = 'walker'";
-    var [walkers] = 
+    var [walkers] = db.query(query);
+
+    
   } catch (err) {
     console.log(err);
     return res.status(500).send;
