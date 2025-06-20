@@ -19,6 +19,7 @@ app.use(cookieParser());
 
 (async () => {
     try {
+        // insert the tables' data
         await db.execute(`
             INSERT INTO Users(username, email, password_hash, role) VALUES
             ("alice123", "alice@example.com", "hashed123", 'owner'),
@@ -33,6 +34,13 @@ app.use(cookieParser());
             ((SELECT dog_id FROM Dogs WHERE name = "Sam"), '2025-06-13 11:30:00', 15, "Rundle Mall", 'accepted'),
             ((SELECT dog_id FROM Dogs WHERE name = "Lucy"), '2025-06-13 10:30:00', 30, "Semaphore", 'open');
             `);
+            await db.execute(`INSERT INTO Dogs(owner_id, name, size) VALUES
+            ((SELECT user_id FROM Users WHERE username = "alice123"), 'Max', 'medium'),
+            ((SELECT user_id FROM Users WHERE username = "carol123"), 'Bella', 'small'),
+            ((SELECT user_id FROM Users WHERE username = "ben"), "Clifford", 'large'),
+            ((SELECT user_id FROM Users WHERE username = "alice123"), 'Sam', 'small'),
+            ((SELECT user_id FROM Users WHERE username = "carol123"), 'Lucy', 'large');`);
+            
             console.log('Successfully added test data.');
     } catch (err) {
     console.log('Error occurred, perhaps the data already exists?\n' + err);
