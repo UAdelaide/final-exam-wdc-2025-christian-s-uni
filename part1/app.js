@@ -55,6 +55,9 @@ app.use(cookieParser());
             (3, 2, 4, 5, '2025-06-13 12:00:00'),
             (5, 2, 3, 3, '2025-06-13 11:00:00');`);
             console.log('Successfully added walk ratings');
+
+            await db.execute(`INSERT INTO WalkApplications(request_id, walker_id, status) {
+                }`)
         } else {
             console.log("Not adding data as there is already at least one user or dog");
         }
