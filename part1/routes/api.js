@@ -31,7 +31,8 @@ router.get('/walkrequests/open', async function(req,res,next) {
 
 router.get('/walkers/summary', async function (req,res,next) {
   try {
-    var query = `SELECT `
+    var query = `SELECT something FROM WalkRatings wr
+    INNER JOIN `
   } catch (err) {
     console.log(err);
     return res.status(500).send;
