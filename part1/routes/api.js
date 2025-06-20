@@ -18,9 +18,9 @@ router.get('/dogs', async function(req, res, next) {
 
 router.get('/walkrequests/open', async function(req,res,next) {
   try {
-    var query= `SELECT something FROM WalkRequests wr
+    var query = `SELECT something FROM WalkRequests wr
     INNER JOIN Dogs d on d.dog_id = wr.dog_id
-    INNER JOIN;`
+    INNER JOIN Users u on u.user_id = d.owner_id`
   }
 })
 module.exports = router;
