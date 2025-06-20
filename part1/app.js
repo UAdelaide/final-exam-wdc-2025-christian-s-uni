@@ -20,8 +20,10 @@ app.use(cookieParser());
 
 (async () => {
     try {
+        // Check there are no users and dogs in the database
         var [rows] = await db.query(`SELECT COUNT(*) FROM Users u
             INNER JOIN Dogs d on d.owner_id = u.user_id`);
+        if
         await db.execute(`
             INSERT INTO Users(username, email, password_hash, role) VALUES
             ("alice123", "alice@example.com", "hashed123", 'owner'),
@@ -31,10 +33,6 @@ app.use(cookieParser());
             ("kenny06", "kenny@kennison.com", "evenmoresecure151", 'walker');
             `);
             console.log("Successfully added users");
-    } catch (AddUsrErr) {
-        console.log("Failed to add users, they probably already exist\n" + AddUsrErr);
-    }
-    try {
             await db.execute(`INSERT INTO Dogs(owner_id, name, size) VALUES
             ((SELECT user_id FROM Users WHERE username = "alice123"), 'Max', 'medium'),
             ((SELECT user_id FROM Users WHERE username = "carol123"), 'Bella', 'small'),
