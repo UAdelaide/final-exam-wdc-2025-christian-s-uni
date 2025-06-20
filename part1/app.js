@@ -29,6 +29,7 @@ app.use(cookieParser());
             ("ben", "ben@example.com", "verysecure", 'owner'),
             ("kenny06", "kenny@kennison.com", "evenmoresecure151", 'walker');
             `);
+        
 
             await db.execute(`INSERT INTO Dogs(owner_id, name, size) VALUES
             ((SELECT user_id FROM Users WHERE username = "alice123"), 'Max', 'medium'),
