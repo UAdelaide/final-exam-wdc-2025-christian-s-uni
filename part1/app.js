@@ -33,6 +33,7 @@ app.use(cookieParser());
             ("kenny06", "kenny@kennison.com", "evenmoresecure151", 'walker');
             `);
             console.log("Successfully added users");
+            
             await db.execute(`INSERT INTO Dogs(owner_id, name, size) VALUES
             ((SELECT user_id FROM Users WHERE username = "alice123"), 'Max', 'medium'),
             ((SELECT user_id FROM Users WHERE username = "carol123"), 'Bella', 'small'),
@@ -40,10 +41,7 @@ app.use(cookieParser());
             ((SELECT user_id FROM Users WHERE username = "alice123"), 'Sam', 'small'),
             ((SELECT user_id FROM Users WHERE username = "carol123"), 'Lucy', 'large');`);
             console.log("Successfully added dogs");
-    } catch (addDogErr) {
-        console.log("Failed to add dogs, they probably already exist\n" + addDogErr);
-    }
-    try {
+
             await db.execute(`INSERT INTO WalkRequests(dog_id, requested_time, duration_minutes, location, status) VALUES
             ((SELECT dog_id FROM Dogs WHERE name = "Max"), '2025-06-10 08:00:00', 30, "Parklands", 'open'),
             ((SELECT dog_id FROM Dogs WHERE name = "Bella"), '2025-06-10 09:30:00', 45, "Beachside Ave", 'accepted'),
@@ -51,8 +49,8 @@ app.use(cookieParser());
             ((SELECT dog_id FROM Dogs WHERE name = "Sam"), '2025-06-13 11:30:00', 15, "Rundle Mall", 'accepted'),
             ((SELECT dog_id FROM Dogs WHERE name = "Lucy"), '2025-06-13 10:30:00', 30, "Semaphore", 'open');`);
             console.log('Successfully added walk requests');
-    } catch (addWalksErr) {
-    console.log('Error occurred, the walk requests probably already exist\n' + addWalksErr);
+    } catch (err) {
+    console.log('Error occurred while adding data.\n' + addWalksErr);
     }
 })();
 
