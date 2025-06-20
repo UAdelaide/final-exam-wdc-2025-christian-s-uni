@@ -122,7 +122,9 @@
         }
 
         async function logout() {
-          
+          try {
+            const res = await fetch('/api/user')
+          }
         }
 
         onMounted(() => {
