@@ -50,7 +50,9 @@ app.use(cookieParser());
             ((SELECT dog_id FROM Dogs WHERE name = "Sam"), '2025-06-13 11:30:00', 15, "Rundle Mall", 'accepted'),
             ((SELECT dog_id FROM Dogs WHERE name = "Lucy"), '2025-06-13 10:30:00', 30, "Semaphore", 'open');`);
             console.log('Successfully added walk requests');
-        } 
+        } else {
+            console.log("Not adding data as there is already at least one user or dog");
+        }
     } catch (err) {
     console.log('Error occurred while adding data.\n' + addWalksErr);
     }
@@ -62,7 +64,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api', apiRouter);
-
-console.log("Server has started");
 
 module.exports = app;
