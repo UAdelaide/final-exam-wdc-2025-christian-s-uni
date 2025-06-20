@@ -39,6 +39,7 @@ app.use(cookieParser());
             ((SELECT user_id FROM Users WHERE username = "ben"), "Clifford", 'large'),
             ((SELECT user_id FROM Users WHERE username = "alice123"), 'Sam', 'small'),
             ((SELECT user_id FROM Users WHERE username = "carol123"), 'Lucy', 'large');`);
+            console.log("Successfully added dogs");
     } catch (addDogErr) {
         console.log("Failed to add dogs, they probably already exist\n" + addDogErr);
     }
