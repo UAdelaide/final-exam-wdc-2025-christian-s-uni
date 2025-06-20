@@ -67,8 +67,8 @@
           try {
             const usr = await fetch('/api/users/me');
             const result = await usr.json();
-            user = await result.user_id;
-
+            this.user = await result.user_id;
+            console.log(this.user);
           } catch (err) {
             error.value = err.message;
             message.value = '';
