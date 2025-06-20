@@ -10,6 +10,7 @@ createApp({
     },
     async mounted() {
         var fetchedDogImg = await fetch("https://dog.ceo/api/breeds/image/random");
-        this.dogImage = await fetchedDogImg.json();
+        dogImgObject = await fetchedDogImg.json();
+        this.dogImage = dogImgObject.mes
     }
 }).mount('#app');
