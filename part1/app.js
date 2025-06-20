@@ -30,9 +30,9 @@ app.use(cookieParser());
             ("kenny06", "kenny@kennison.com", "evenmoresecure151", 'walker');
             `);
     } catch (AddUsrErr) {
-        
+        console.log("Failed to add users, perhaps they already exist?\n" + AddUsrErr);
     }
-
+    try {
             await db.execute(`INSERT INTO Dogs(owner_id, name, size) VALUES
             ((SELECT user_id FROM Users WHERE username = "alice123"), 'Max', 'medium'),
             ((SELECT user_id FROM Users WHERE username = "carol123"), 'Bella', 'small'),
