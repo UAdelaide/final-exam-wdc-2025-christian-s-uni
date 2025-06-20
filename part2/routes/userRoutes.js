@@ -68,4 +68,5 @@ router.get('/logout', (req,res) => {
     res.send({ message: "Logout success" });
   });
 });
+
 module.exports = router;
