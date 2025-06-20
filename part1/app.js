@@ -28,6 +28,7 @@ let db;
         database: 'DogWalkService'
     });
     // add some test data
+    
     } catch (err) {
 
     }
