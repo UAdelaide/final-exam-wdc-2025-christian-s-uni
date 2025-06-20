@@ -42,8 +42,8 @@ app.use(cookieParser());
             ((SELECT dog_id FROM Dogs WHERE name = "Sam"), '2025-06-13 11:30:00', 15, "Rundle Mall", 'accepted'),
             ((SELECT dog_id FROM Dogs WHERE name = "Lucy"), '2025-06-13 10:30:00', 30, "Semaphore", 'open');
             `);
+            console.log('Successfully added test data.');
     }
-    console.log('Successfully added test data.');
     } catch (err) {
     console.log('Error occurres, perhaps the data already exists?' + err);
     }
