@@ -61,8 +61,8 @@ app.use(cookieParser());
                 (2, 5, '2025-06-09 15:40:32', 'accepted'),
                 (3, 2, '2025-06-10 08:00:00', 'accepted'),
                 (4, 5, '2025-06-12 10:00:00', 'accepted'),
-                (5, 2, '2025-06-12 )
-                `)
+                (5, 2, '2025-06-12 23:45:55', 'accepted')
+                `);
         } else {
             console.log("Not adding data as there is already at least one user or dog");
         }
