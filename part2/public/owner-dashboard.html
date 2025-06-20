@@ -107,10 +107,11 @@
               method: 'GET',
               credentials: "same-origin"
             })
-            if (!res.ok) throw new Error(result.error || 'Failed to get dogs');
 
             dogs.value = await res.json();
             console.log(dogs.value);
+
+            if (!res.ok) throw new Error(result.error || 'Failed to get dogs');
           } catch (err) {
             error.value = err.message;
             message.value = '';
