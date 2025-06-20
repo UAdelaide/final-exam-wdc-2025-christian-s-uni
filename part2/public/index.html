@@ -50,7 +50,7 @@
                 }
               )
             }).then((r)=>(r.json().then((loggedIn) => {
-              // Once the user's logged in, we can 
+              // Once the user's logged in, we can bring them to their respective dashboard
               if (r.status === 200) {
                 if (loggedIn.user.role === "owner") {
                   window.location = "/owner-dashboard.html";
