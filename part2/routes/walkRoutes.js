@@ -64,7 +64,7 @@ router.get('/userdogs', async (req,res) => {
   try {
   // db.query to SELECT * FROM Dogs WHERE owner_id = ...
   var query = "SELECT * FROM Dogs WHERE owner_id = ?";
-  var [dogs] = await db.query(query, [req.session.user.userid]);
+  var [dogs] = await db.query(query, [req.session.user.user_id]);
   return res.send(dogs);
   } catch (err) {
     console.log(err);
