@@ -68,7 +68,7 @@ router.get('/getUserDogs', async (req,res) => {
   return dogs;
   } catch (err) {
     console.log(err);
-    res.status(400).send()
+    res.status(400).send({ message: "Error occurred while fetching your dogs, are you logged in? " });
   }
 });
 
