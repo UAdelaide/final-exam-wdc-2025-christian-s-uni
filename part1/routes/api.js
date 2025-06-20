@@ -11,7 +11,7 @@ router.get('/dogs', function(req, res, next) {
     const [rows] = db.query(query);
     return res.send(rows);
   } catch (err) {
-    return res.status(500).send();
+    return res.status(500).send(err);
   }
 });
 
