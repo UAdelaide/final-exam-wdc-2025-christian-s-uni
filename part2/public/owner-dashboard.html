@@ -102,6 +102,7 @@
           try {
             const res = await fetch('/api/walks/userDogs', {
               method: 'GET',
+              credentials: "same-origin",
             })
           }
         }
