@@ -31,7 +31,7 @@ router.get('/walkrequests/open', async function(req,res,next) {
 
 router.get('/walkers/summary', async function (req,res,next) {
   try {
-    // stuff
+    var query = `SELECT `
   } catch (err) {
     console.log(err);
     return res.status(500).send;
