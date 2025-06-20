@@ -53,8 +53,7 @@ app.use(cookieParser());
 
             await db.execute(`INSERT INTO WalkRatings(request_id, walker_id, owner_id, rating, rated_at) VALUES
             (3, 2, 4, 5, '2025-06-13 12:00:00'),
-            (5, 2, 3, 3, '2025-06-13 11:00:00')
-            invalid mysql syntax for testing;`);
+            (5, 2, 3, 3, '2025-06-13 11:00:00');`);
             console.log('Successfully added walk ratings');
         } else {
             console.log("Not adding data as there is already at least one user or dog");
