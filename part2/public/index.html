@@ -53,7 +53,9 @@
               if (r.status === 200) {
                 if (loggedIn.user.role === "owner") {
                   window.location = "/owner-dashboard.html";
-                } else if (loggedIn.user.role ===)
+                } else if (loggedIn.user.role === "walker") {
+                  window.location = "/walker-dashboard.html";
+                }
               }
             })));
         }
