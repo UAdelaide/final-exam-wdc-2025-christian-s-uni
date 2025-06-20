@@ -30,7 +30,7 @@ app.use(cookieParser());
             ("kenny06", "kenny@kennison.com", "evenmoresecure151", 'walker');
             `);
     } catch (AddUsrErr) {
-        console.log("Failed to add users, perhaps they already exist?\n" + AddUsrErr);
+        console.log("Failed to add users, they probably already exist\n" + AddUsrErr);
     }
     try {
             await db.execute(`INSERT INTO Dogs(owner_id, name, size) VALUES
@@ -40,7 +40,7 @@ app.use(cookieParser());
             ((SELECT user_id FROM Users WHERE username = "alice123"), 'Sam', 'small'),
             ((SELECT user_id FROM Users WHERE username = "carol123"), 'Lucy', 'large');`);
     } catch (addDogErr) {
-        console.log("Failed to add dogs, perhaps they already exist?\n" + addDogErr);
+        console.log("Failed to add dogs, they probably already exist\n" + addDogErr);
     }
     try {
             await db.execute(`INSERT INTO WalkRequests(dog_id, requested_time, duration_minutes, location, status) VALUES
