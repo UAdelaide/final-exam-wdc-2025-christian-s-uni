@@ -21,12 +21,13 @@ let db;
 (async () => {
     try {
     // Connect to the dogwalks database
-    const connection = await mysql.createConnection({
+    db = await mysql.createConnection({
         host: 'localhost',
         user: 'root',
         password: '',
         database: 'DogWalkService'
     });
+    // add some test data
     } catch (err) {
 
     }
