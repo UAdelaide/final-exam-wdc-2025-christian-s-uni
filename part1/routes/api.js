@@ -40,7 +40,7 @@ router.get('/walkers/summary', async function (req,res,next) {
       fetchReviews.push(walker);
     }
     const walkerReviews = await Promise.all(fetchReviews);
-    res.s
+    for (w)
 
 
   } catch (err) {
