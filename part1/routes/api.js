@@ -28,4 +28,10 @@ router.get('/walkrequests/open', async function(req,res,next) {
   return res.status(500).send();
   }
 });
+
+router.get('/walkers/summary', async function (req,res,next) {
+  try {
+    // 
+  }
+})
 module.exports = router;
