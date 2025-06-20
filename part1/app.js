@@ -21,9 +21,9 @@ app.use(cookieParser());
 (async () => {
     try {
         // Check there are no users and dogs in the database
-        var [rows] = await db.query(`SELECT COUNT(*) FROM Users u
+        var [rows] = await db.query(`SELECT COUNT(*) as count FROM Users u
             INNER JOIN Dogs d on d.owner_id = u.user_id`);
-        if (rows)
+        if (rows[0].count === 0) {}
         await db.execute(`
             INSERT INTO Users(username, email, password_hash, role) VALUES
             ("alice123", "alice@example.com", "hashed123", 'owner'),
