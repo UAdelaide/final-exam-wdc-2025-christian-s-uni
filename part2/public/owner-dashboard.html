@@ -78,8 +78,8 @@
 
     createApp({
       data() {
-        
-      }
+        var dogs = [];
+      },
       setup() {
         const form = ref({
           dog_id: '',
@@ -109,8 +109,8 @@
             })
             if (!res.ok) throw new Error(result.error || 'Failed to get dogs');
 
-            dogs = await res.json();
-            console.log(dogs);
+            this.dogs = await res.json();
+            console.log(this.dogs);
           } catch (err) {
             error.value = err.message;
             message.value = '';
