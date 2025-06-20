@@ -59,6 +59,8 @@ router.post('/:id/apply', async (req, res) => {
   }
 });
 
-router.get()
+router.get('/getDogs', async (req,res) => {
+  // db.q
+})
 
 module.exports = router;
