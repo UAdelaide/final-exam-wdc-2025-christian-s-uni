@@ -121,16 +121,6 @@
           }
         }
 
-        async function logout() {
-          fetch("/api/users/logout", {
-              credentials: "same-origin",
-            }).then((r)=>(r.json().then((loggedOut) => {
-              // If logout succeeds, redirect to the login page
-              if (r.status === 200) {
-              window.location="/";
-              }})));
-        }
-
         onMounted(() => {
           loadWalks();
         });
@@ -142,7 +132,8 @@
           error,
           submitWalkRequest
         };
-      }
+      },
+      
     }).mount('#app');
   </script>
 
