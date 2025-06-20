@@ -107,7 +107,7 @@
             })
             if (!res.ok) throw new Error(result.error || 'Failed to get dogs');
 
-            dogs = await res.json();
+            dogs.value = await res.json();
             console.log(dogs);
           } catch (err) {
             error.value = err.message;
