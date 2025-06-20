@@ -83,6 +83,7 @@
           requested_time: '',
           duration_minutes: '',
           location: ''
+          
         });
 
         const walks = ref([]);
@@ -100,7 +101,8 @@
 
         async function getUserDogs() {
           try {
-            const res = await fetch()
+            const res = await fetch("/api/walks/userDogs");
+
           }
 
         async function submitWalkRequest() {
