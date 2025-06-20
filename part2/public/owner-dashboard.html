@@ -124,14 +124,11 @@
         async function logout() {
           fetch("/api/users/logout", {
               credentials: "same-origin",
-            }).then((r)=>(r.json().then((loggedIn) => {
-              // Once the user's logged in, we can bring them to their respective dashboard
+            }).then((r)=>(r.json().then((loggedOut) => {
+              // If outout succeeds, redirect to the login page
               if (r.status === 200) {
-                if (loggedIn.user.role === "owner") {
-                  window.location = "/owner-dashboard.html";
-                } else if (loggedIn.user.role === "walker") {
                   window.location = "/walker-dashboard.html";
-                }}})));
+                }})));
         }
       }
         }
