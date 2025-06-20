@@ -58,7 +58,8 @@ app.use(cookieParser());
 
             await db.execute(`INSERT INTO WalkApplications(request_id, walker_id, applied_at, status)
                 (1, 2, '2025-06-09 12:00:00', 'rejected'),
-                (2, 5, '2025-06-09 15:40:32', 'a)
+                (2, 5, '2025-06-09 15:40:32', 'accepted'),
+                (3, 2,)
                 `)
         } else {
             console.log("Not adding data as there is already at least one user or dog");
