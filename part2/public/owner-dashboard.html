@@ -97,11 +97,7 @@
 
         async function submitWalkRequest() {
           try {
-            const res = await fetch('/api/walks', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(form.value)
-            });
+            const res = await fetch('/api/walks');
             const result = await res.json();
 
             if (!res.ok) throw new Error(result.error || 'Error submitting walk request');
@@ -122,7 +118,26 @@
         }
 
         async function logout() {
-
+          fetch("/api/users/login", {
+              method: "POST",
+              // Set headers and credentials accordingly
+              headers: { 'Content-Type': 'application/json'},
+              credentials: "same-origin",
+              body: JSON.stringify(
+                {
+                  email: this.enteredUsername, password: this.enteredPassword
+                }
+              )
+            }).then((r)=>(r.json().then((loggedIn) => {
+              // Once the user's logged in, we can bring them to their respective dashboard
+              if (r.status === 200) {
+                if (loggedIn.user.role === "owner") {
+                  window.location = "/owner-dashboard.html";
+                } else if (loggedIn.user.role === "walker") {
+                  window.location = "/walker-dashboard.html";
+                }}})));
+        }
+      }
         }
 
         onMounted(() => {
