@@ -90,7 +90,9 @@
           message,
           error,
           applyToWalk
-        }methods: {
+        };
+      },
+      methods: {
         async logout() {
           fetch("/api/users/logout", {
               credentials: "same-origin",
