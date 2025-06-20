@@ -50,7 +50,9 @@
                 }
               )
             }).then((r)=>(r.json().then((loggedIn) => {
-              if (r.status )
+              if (r.status === 200) {
+                
+              }
             })));
         }
       }
