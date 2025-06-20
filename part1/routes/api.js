@@ -8,7 +8,7 @@ router.get('/dogs', function(req, res, next) {
     var query = `SELECT name as dog_name, size, username as owner_username FROM Dogs
     INNER JOIN Users
     ON Dogs.owner_id = Users.user_id`;
-    const [rows] = db.query(query);
+    const [rows] = await db.query(query);
     return res.send(rows);
   } catch (err) {
     console.log(err);
