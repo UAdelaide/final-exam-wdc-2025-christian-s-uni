@@ -105,7 +105,7 @@
           try {
             const res = await fetch('/api/walks/userDogs')
             inbetweenvalue = await res.json();
-            dogs.value = inbetweenvalue;
+            dogs.value = await inbetweenvalue;
             console.log(inbetweenvalue);
 
             if (!res.ok) throw new Error(result.error || 'Failed to get dogs');
