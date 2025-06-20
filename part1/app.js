@@ -29,7 +29,11 @@ let db;
     });
     // add some test data
     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM books');
-    if (rows[0].count < 1 )
+    if (rows[0].count < 1) {
+        await db.execute(`
+            
+            `)
+    }
     } catch (err) {
 
     }
