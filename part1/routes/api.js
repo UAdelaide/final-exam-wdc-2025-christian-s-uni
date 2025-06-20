@@ -34,7 +34,9 @@ router.get('/walkers/summary', async function (req,res,next) {
   try {
     // Get all the walkers
     var query = ` SELECT username, COUNT(rating_id), AVG(rating) FROM Users u
-    LEFT JOIN WalkRatings wra ON u.user_id = wra.walker_id GROUP BY username;`
+    LEFT JOIN WalkRatings wra ON u.user_id = wra.walker_id
+    GROUP BY username;`;
+    [summary = await ]
   } catch (err) {
     console.log(err);
     return res.status(500).send;
