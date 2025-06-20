@@ -32,7 +32,8 @@ router.get('/walkrequests/open', async function(req,res,next) {
 router.get('/walkers/summary', async function (req,res,next) {
   try {
     // Get all the walkers
-    query = "SELECT * FROM "
+    var query = "SELECT * FROM Users WHERE Role = 'walker'";
+    var [walkers] = 
   } catch (err) {
     console.log(err);
     return res.status(500).send;
