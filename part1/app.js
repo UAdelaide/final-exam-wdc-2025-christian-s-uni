@@ -44,7 +44,7 @@ app.use(cookieParser());
             `);
             console.log('Successfully added test data.');
     } catch (err) {
-    console.log('Error occurres, perhaps the data already exists?' + err);
+    console.log('Error occurred, perhaps the data already exists?\n' + err);
     }
 })();
 
