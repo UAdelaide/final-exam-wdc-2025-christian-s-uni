@@ -122,16 +122,8 @@
         }
 
         async function logout() {
-          fetch("/api/users/login", {
-              method: "POST",
-              // Set headers and credentials accordingly
-              headers: { 'Content-Type': 'application/json'},
+          fetch("/api/users/logout", {
               credentials: "same-origin",
-              body: JSON.stringify(
-                {
-                  email: this.enteredUsername, password: this.enteredPassword
-                }
-              )
             }).then((r)=>(r.json().then((loggedIn) => {
               // Once the user's logged in, we can bring them to their respective dashboard
               if (r.status === 200) {
