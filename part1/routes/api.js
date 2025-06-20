@@ -23,6 +23,9 @@ router.get('/walkrequests/open', async function(req,res,next) {
     INNER JOIN Users u on u.user_id = d.owner_id`
     const [rows] = await db.query(query);
     return res.send(rows);
+  } catch (err) {
+  console.log(err);
+  return res.status(500).send();
   }
 })
 module.exports = router;
