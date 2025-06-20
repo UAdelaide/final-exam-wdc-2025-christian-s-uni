@@ -105,7 +105,7 @@
           try {
             const res = await fetch('/api/walks/userDogs', {
               method: 'GET',
-              credentials: "same-origin",
+              credentials: "same-origin"
             })
             if (!res.ok) throw new Error(result.error || 'Failed to get dogs');
 
