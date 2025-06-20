@@ -31,13 +31,8 @@ router.get('/walkrequests/open', async function(req,res,next) {
 
 router.get('/walkers/summary', async function (req,res,next) {
   try {
-    var query = `SELECT u.username AS walker_username,
-    COUNT(*) AS total_ratings,
-
-    FROM Users u
-    INNER JOIN WalkRatings wr ON wr.walker_id = u.user_id
-    GROUP BY u.username`;
-    
+    // Get all the walkers
+    query = "SELECT * FROM "
   } catch (err) {
     console.log(err);
     return res.status(500).send;
