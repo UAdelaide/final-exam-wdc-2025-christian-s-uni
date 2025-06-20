@@ -100,7 +100,9 @@
 
         async function getUserDogs() {
           try {
-            const res = await fetch('/api/walks/userDogs');
+            const res = await fetch('/api/walks/userDogs', {
+              method: 'GET',
+            })
           }
         }
 
