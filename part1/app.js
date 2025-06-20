@@ -20,8 +20,8 @@ app.use(cookieParser());
 (async () => {
     try {
 
-    const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
-    console.log()
+    const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users INNER JOIN Dogs INNER JOIN WalkRequests');
+    console.log("Number of database entries: ")
     if (rows[0].count < 1) {
         await db.execute(`
             INSERT INTO Users(username, email, password_hash, role) VALUES
