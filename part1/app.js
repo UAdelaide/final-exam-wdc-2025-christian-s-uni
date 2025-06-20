@@ -19,10 +19,9 @@ app.use(cookieParser());
 
 (async () => {
     try {
-    // Connect to the dogwalks database
 
-    // add some test data
     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
+    console.log()
     if (rows[0].count < 1) {
         await db.execute(`
             INSERT INTO Users(username, email, password_hash, role) VALUES
