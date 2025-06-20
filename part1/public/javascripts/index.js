@@ -13,6 +13,12 @@ createApp({
         var dogImgObject = await fetchedDogImg.json();
         this.dogImage = dogImgObject.message;
     },
-    async 
+    methods: {
+        async fetchNewImage() {
+            var fetchedDogImg = await fetch("https://dog.ceo/api/breeds/image/random");
+            var dogImgObject = await fetchedDogImg.json();
+            this.dogImage = dogImgObject.message;
+        }
+    }
 
 }).mount('#app');
