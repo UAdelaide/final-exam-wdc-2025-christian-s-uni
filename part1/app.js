@@ -28,7 +28,7 @@ let db;
         database: 'DogWalkService'
     });
     // add some test data
-    
+    const [rows] = await db.execute('SELECT COUNT(*) AS count FROM books');
     } catch (err) {
 
     }
