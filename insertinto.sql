@@ -15,3 +15,4 @@ INSERT INTO Dogs(owner_id, name, size) VALUES
 ((SELECT user_id FROM Users WHERE username = "alice123"), 'Sam', 'small'),
 ((SELECT user_id FROM Users WHERE username = "carol123"), 'Lucy', 'large');
 
+INSERT INTO WalkRequests()
