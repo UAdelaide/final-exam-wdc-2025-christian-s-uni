@@ -20,7 +20,8 @@ router.get('/walkrequests/open', async function(req,res,next) {
   try {
     var query = `SELECT request_id, d.name as dog_name, requested_time, duration_minutes, location, u.username as owner_username FROM WalkRequests wr
     INNER JOIN Dogs d on d.dog_id = wr.dog_id
-    INNER JOIN Users u on u.user_id = d.owner_id`;
+    INNER JOIN Users u on u.user_id = d.owner_id
+    WHERE wr.`;
     const [rows] = await db.query(query);
     return res.send(rows);
   } catch (err) {
