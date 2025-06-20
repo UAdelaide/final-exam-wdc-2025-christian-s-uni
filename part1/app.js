@@ -19,8 +19,8 @@ let db;
 // Connect to MySQL
 
 (async () => {
-    
-}
+    // Connect to the dogwalks database
+})();
 
 app.use(express.static(path.join(__dirname, 'public')));
 
