@@ -41,6 +41,7 @@ router.get('/walkers/summary', async function (req,res,next) {
     }
     const walkerReviews = await Promise.all(fetchReviews);
     let someJSON = [];
+    console.log(walkerReviews);
     for (let w = 0; w < walkerReviews.length; w++) {
       for (let r = 0; r < walkerReviews[w].length; r++) {
         someJSON.push(walkerReviews[w][r]); // add all the reviews to a json for now
