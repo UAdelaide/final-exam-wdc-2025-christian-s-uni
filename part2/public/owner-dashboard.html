@@ -107,8 +107,9 @@
             })
             if (!res.ok) throw new Error(result.error || 'Failed to get dogs');
 
-            dogs = await 
-          }
+            dogs = await res.json();
+            console.log(dogs);
+          } catch
         }
 
         async function submitWalkRequest() {
