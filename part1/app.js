@@ -56,4 +56,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api', apiRouter);
 
+console.log("Server has started");
+
 module.exports = app;
