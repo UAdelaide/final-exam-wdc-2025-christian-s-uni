@@ -86,7 +86,8 @@
 
           // Fetch an image for each dog
           var dogImgs = await fetch("https://dog.ceo/api/breeds/image/random")
-          var parsed
+          var parsedDogImgs = await dogImgs.json();
+          // 
 
           /*
           // Add an extra "image" key to the dog object
