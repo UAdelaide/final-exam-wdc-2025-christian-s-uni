@@ -9,9 +9,9 @@
 <body>
     <div id="app">
         <button type="button" @click="linkButtons = !linkButtons">Hide Sidebar</button>
-        <div id="buttons" v-if="linkButtons">
-            <button type="button" class=""btn">Home</button>
-            <button type="button">Login</button>
+        <div id="buttons" v-if="linkButtons" class="btn btn-primary">
+            <button type="button" class="btn btn-primary">Home</button>
+            <button type="button" class="btn btn-primary">Login</button>
         </div>
         <h1>Dog of the Day</h1>
         <p>Today's dog: {{ dogName }} owned by {{ dogOwner }}</p>
