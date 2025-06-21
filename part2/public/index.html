@@ -37,8 +37,8 @@
         return {
           message: 'Welcome to the Dog Walking Service!',
           enteredUsername: "",
-          enteredPassword: ""
-          
+          enteredPassword: "",
+          dogs: []
         };
       },
       methods: {
@@ -61,8 +61,11 @@
                 } else if (loggedIn.user.role === "walker") {
                   window.location = "/walker-dashboard.html";
                 }}})));
-        }
+        },
 
+        async fetchDogs() {
+
+        }
 
       }
     }).mount('#app');
