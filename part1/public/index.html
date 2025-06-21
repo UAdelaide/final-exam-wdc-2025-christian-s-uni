@@ -11,8 +11,8 @@
         <button type="button" @click="linkButtons = !linkButtons" class="btn btn-primary">Hide Sidebar</button>
 
         <div id="buttons" class="container">
-            <div class="row justify-content-right"
-            <d
+            <div class="row justify-content-right"></div>
+            <div class="col" v-if="linkButtons"></div>
             <button type="button" class="btn btn-primary">Home</button>
             <button type="button" class="btn btn-primary">Login</button>
         </div>
