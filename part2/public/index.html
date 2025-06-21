@@ -68,6 +68,9 @@
           var res = fetch('/api/walks/dogs');
           dogs = await res.json();
         }
+      },
+      async mounted() {
+        fetchDogs();
       }
     }).mount('#app');
   </script>
