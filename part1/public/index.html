@@ -8,10 +8,12 @@
 
 <body>
     <div id="app">
-        <button type="button" @click="linkButtons = !linkButtons" class="btn btn-primary">Hide Sidebar</button>
 
         <div id="buttons" class="container">
-            <div class="row justify-content-between"
+            <div class="row justify-content-start">
+                
+                <button type="button" @click="linkButtons = !linkButtons" class="btn btn-primary">Hide Sidebar</button>
+            </div>
             <div class="row justify-content-end">
             <div class="col" v-if="linkButtons">
                 <button type="button" class="btn btn-primary">Home</button>
