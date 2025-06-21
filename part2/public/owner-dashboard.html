@@ -22,7 +22,7 @@
           <button class="btn btn-outline-danger" type="button" @click="logout">Logout</button></div>
         </div>
     </div>
-    
+
     <!-- Walk request form -->
     <div class="card mb-4">
       <div class="card-header bg-primary text-white">
@@ -32,7 +32,8 @@
         <form @submit.prevent="submitWalkRequest">
           <div class="mb-3">
             <label class="form-label">Dog ID</label>
-            <select v-model="form.dog_id">
+            <select v-model="form.dog_id" class="form-control" required>
+              <option disabled value="" 
               <option v-for="dog in dogs" :value="dog.dog_id">{{ dog.name }} ({{ dog.size }})</option>
             </select>
           </div>
