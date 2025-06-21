@@ -88,12 +88,12 @@
           var dogImgs = await fetch(`https://dog.ceo/api/breeds/image/random/${dogTable.length}`)
           var parsedDogImgs = await dogImgs.json();
 
-          // Add an extra "image" key to the dog object
+          // Add an extra ingurl key to the dog object
           for (let index = 0; index < dogTable.length; index++) {
             dogTable[index].imgurl = parsedDogImgs.message[index];
           }
 
-          // Now we can set add the dogs to the table
+          // Now we can add the dogs to the table
           this.dogs = dogTable;
       }
     }).mount('#app');
