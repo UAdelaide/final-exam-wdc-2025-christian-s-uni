@@ -91,6 +91,7 @@
           }
           dogImgs = await Promise.all(imgFetches);
 
+          console.log(dogTable);
           // Add an extra "image" key to the dog object
           for (let index = 0; index < dogTable.length; index++) {
             dogImgs[index].imgurl = dogImgs[index]
