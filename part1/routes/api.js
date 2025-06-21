@@ -34,7 +34,7 @@ router.get('/walkers/summary', async function (req,res,next) {
   try {
     // This query gets all users with role "walker", list of ratings with walker_id, average rating,
     // then combines it with another qery that gets the walks with status completed
-    var query = ` SELECT ratinginfo.username, total_ratings, average_rating, completed_walks FROM
+    var query = ` SELECT ratinginfo.username AS walker_username, total_ratings, average_rating, completed_walks FROM
     (SELECT username, COUNT(rating_id) AS total_ratings, AVG(rating) AS average_rating FROM Users u
     LEFT JOIN WalkRatings wra ON u.user_id = wra.walker_id
     WHERE u.role = "walker" GROUP BY username) AS ratinginfo
