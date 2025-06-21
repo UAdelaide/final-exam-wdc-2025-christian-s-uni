@@ -58,6 +58,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// Logout by destroying the use
 router.get('/logout', (req,res) => {
   req.session.destroy((err) => {
     if (err) {
@@ -65,7 +66,7 @@ router.get('/logout', (req,res) => {
     }
     // clear the cookie
     res.clearCookie("connect.sid");
-    res.send({ message: "Logout success" });
+    return res.send({ message: "Logout success" });
   });
 });
 
