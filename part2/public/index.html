@@ -83,6 +83,7 @@
         // Fetch the dogs
           var res = await fetch('/api/walks/dogs');
           this.dogs = await res.json();
+        // Fetch an image for each dog
       }
     }).mount('#app');
   </script>
