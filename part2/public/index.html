@@ -84,6 +84,7 @@
           var res = await fetch('/api/walks/dogs');
           var dogTable = await res.json();
 
+          /*
           // Fetch an image for each dog
           var imgFetches = [];
           for (let index = 0; index < dogTable.length; index++) {
@@ -91,7 +92,8 @@
           }
           dogImgs = await Promise.all(imgFetches);
 
-          // Add an extra "image" 
+          // Add an extra "image" key to the dog object
+
       }
     }).mount('#app');
   </script>
