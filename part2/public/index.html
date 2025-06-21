@@ -90,7 +90,7 @@
 
           // Add an extra "image" key to the dog object
           for (let index = 0; index < dogTable.length; index++) {
-            dogTable[index].imgurl = dogImgs[index].message;
+            dogTable[index].imgurl = parsedDogImgs.message[index];
           }
 
           // Now we can set add the dogs to the table
