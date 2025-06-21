@@ -27,6 +27,13 @@
   </form>
   {{ dogs }}
   <table>
+    <tr>
+      <td><b>Dog ID</b></td>
+      <td>{{ dog.name }}</td>
+      <td>{{ dog.size }}</td>
+      <td>{{ dog.owner_id }}</td>
+      <td>Photo goes here</td>
+    </tr>
     <tr v-for="dog in dogs">
       <td>{{ dog.dog_id }}</td>
       <td>{{ dog.name }}</td>
