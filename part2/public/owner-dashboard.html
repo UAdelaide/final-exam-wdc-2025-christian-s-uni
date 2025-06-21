@@ -113,7 +113,7 @@
             dogs.value = await res.json();
             console.log(dogs.value);
 
-            if (!res.ok) throw new Error(res.error || 'Failed to get dogs');
+            if (!res.ok) throw new Error(dogs..error || 'Failed to get dogs');
           } catch (err) {
             error.value = err.message;
             message.value = '';
