@@ -87,13 +87,13 @@
           // Fetch an image for each dog
           var imgFetches = [];
           for (let index = 0; index < dogTable.length; index++) {
-            imgFetches.push(await fetch("https://dog.ceo/api/breeds/image/random"));
+            imgFetches.push(await fetch("https://dog.ceo/api/breeds/image/random").then((r)=>r.json()));
           }
           dogImgs = await Promise.all(imgFetches);
 
           // Add an extra "image" key to the dog object
           for (let index = 0; index < dogTable.length; index++) {
-            dogImgs[index].imgurl = dogImgs[index].message
+            dogImgs[index].imgurl = dogImgs[index].message;
           }
 
           console.log(dogTable);
