@@ -62,15 +62,11 @@
                 } else if (loggedIn.user.role === "walker") {
                   window.location = "/walker-dashboard.html";
                 }}})));
-        },
-
-        async fetchDogs() { // Fetch the dogs for the table
-          var res = fetch('/api/walks/dogs');
-          dogs = await res.json();
         }
       },
       async mounted() {
-        fetchDogs();
+          var res = fetch('/api/walks/dogs');
+          dogs = await res.json();
       }
     }).mount('#app');
   </script>
