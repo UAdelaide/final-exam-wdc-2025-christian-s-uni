@@ -85,7 +85,7 @@
           var dogTable = await res.json();
 
           // Fetch an image for each dog
-          var dogImgs = await fetch(`https://dog.ceo/api/breeds/image/random/${dog}`)
+          var dogImgs = await fetch(`https://dog.ceo/api/breeds/image/random/${dogTable.length}`)
           var parsedDogImgs = await dogImgs.json();
           // Separate each line of message
           console.log(parsedDogImgs);
