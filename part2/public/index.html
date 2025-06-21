@@ -25,6 +25,7 @@
       <button type="submit" class="btn btn-primary">Login</button>
     </div>
   </form>
+  {{ dogs }}
   <table>
     <tr v-for="dog in dogs"></tr>
   </table>
@@ -65,7 +66,7 @@
 
         async fetchDogs() { // Fetch the dogs for the table
           var res = fetch('/api/walks/dogs');
-          dogs = await
+          dogs = await res.json();
         }
 
       }
