@@ -11,10 +11,13 @@
         <button type="button" @click="linkButtons = !linkButtons" class="btn btn-primary">Hide Sidebar</button>
 
         <div id="buttons" class="container">
-            <div class="row justify-content-right"></div>
-            <div class="col" v-if="linkButtons"></div>
-            <button type="button" class="btn btn-primary">Home</button>
-            <button type="button" class="btn btn-primary">Login</button>
+            <div class=""
+            <div class="row justify-content-right">
+            <div class="col" v-if="linkButtons">
+                <button type="button" class="btn btn-primary">Home</button>
+                <button type="button" class="btn btn-primary">Login</button>
+            </div>
+            </div>
         </div>
         <h1>Dog of the Day</h1>
         <p>Today's dog: {{ dogName }} owned by {{ dogOwner }}</p>
