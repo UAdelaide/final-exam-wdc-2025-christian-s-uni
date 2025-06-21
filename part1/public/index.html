@@ -9,11 +9,11 @@
 <body>
     <div id="app">
 
-        <div id="buttons" class="container">
-            <div class="row justify-content-start">
+        <div id="buttons" class="d-flex justify-content-between">
+            <div class="row">
                 <div class="col"><button type="button" @click="linkButtons = !linkButtons" class="btn btn-primary">Hide Sidebar</button></div>
             </div>
-            <div class="row justify-content-end">
+            <div class="row">
             <div class="col" v-if="linkButtons">
                 <button type="button" class="btn btn-primary">Home</button>
                 <button type="button" class="btn btn-primary">Login</button>
