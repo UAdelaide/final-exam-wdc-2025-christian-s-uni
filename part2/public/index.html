@@ -84,6 +84,7 @@
           var res = await fetch('/api/walks/dogs');
           var dogTable = await res.json();
 
+          console.log(dogTable);
           /*
           // Fetch an image for each dog
           var imgFetches = [];
@@ -91,7 +92,7 @@
             imgFetches.push(await fetch("https://dog.ceo/api/breeds/image/random"));
           }
           dogImgs = await Promise.all(imgFetches);
-
+          */
           // Add an extra "image" key to the dog object
 
       }
